@@ -1,0 +1,21 @@
+{
+  "name": "lit-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:InteractiveTimmy/lit-example.git",
+  "author": "Timothy Scheuering <timsch@cisco.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "esbuild \"./src/index.ts\" --bundle --minify --sourcemap --target=chrome100,firefox100,safari11,edge100 --outfile=\"./static/scripts/index.js\"",
+    "build:watch": "yarn build --watch --servedir=\"./static/\"",
+    "build:module": "tsc"
+  },
+  "dependencies": {
+    "lit": "^2.7.2"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.18",
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.4"
+  }
+}

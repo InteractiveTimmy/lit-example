@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <script type="text/javascript" src="./scripts/index.js"></script>
+  </head>
+  <body>
+    <prefix-example onclick="handleClick()">
+      <div>Content Div</div>
+    </prefix-example>
+
+    <script>
+      const handleClick = () => {
+        const target = document.getElementsByTagName('prefix-example')[0];
+
+        if (target.getAttribute('color') === 'dark') {
+          target.setAttribute('color', 'light');
+        } else {
+          target.setAttribute('color', 'dark');
+        }
+      }
+    </script>
+  </body>
+</html>

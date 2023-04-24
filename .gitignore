@@ -1,3 +1,9 @@
+# System
+.DS_Store
+
+# Build
+static/scripts/*
+
 # Logs
 logs
 *.log
