@@ -1,6 +1,13 @@
 import {css} from 'lit';
 
 const styles = css`
+::slotted([slot="first"]) {
+  color: red;
+}
+::slotted([slot="second"]) {
+  color: green;
+}
+
 :host {
   align-items: center;
   justify-content: center;
@@ -16,7 +23,7 @@ const styles = css`
 
 :host([color="dark"]) {
   background-color: #333;
-  color: #fff;
+  color: var(--some-var);
 }
 
 :host([color="dark"]:hover) {

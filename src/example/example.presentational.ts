@@ -11,8 +11,23 @@ class Example extends LitElement {
   @property({ reflect: true, attribute: true })
   public color?: Color = 'dark';
 
+  @property({ reflect: true, attribute: true })
+  public 'icon-placement': string = 'left';
+
+  @property({ reflect: true, attribute: true })
+  public 'checked': boolean = false;
+
+  public doSomething() {
+    this.checked = !this.checked;
+  }
+
   public override render() {
-    return html`<slot></slot>`
+    return html`
+      <slot name="first" @click="${this.doSomething}"></slot>
+      <slot name="second"></slot>
+      <box @click="${this.doSomething}">box</box>
+      <text>text</text>
+    `;
   }
 }
 

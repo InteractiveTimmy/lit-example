@@ -3,11 +3,23 @@
     <script type="text/javascript" src="./scripts/index.js"></script>
   </head>
   <body>
-    <prefix-example onclick="handleClick()">
-      <div>Content Div</div>
-    </prefix-example>
+    <mdc-theme-provider theme="dark">
+      <prefix-example class="hello" onclick="handleClick()">
+        <div slot="second" onclick="handleOther()">aaa</div>
+        <div slot="first">bbb</div>
+        <button slot="name">Text</button>
+      </prefix-example>
+      <prefix-example class="hello">
+        <div slot="second">aaa</div>
+        <div slot="first">bbb</div>
+      </prefix-example>
+    </mdc-theme-provider>
+
 
     <script>
+      const handleOther = () => {
+        console.log('other');
+      }
       const handleClick = () => {
         const target = document.getElementsByTagName('prefix-example')[0];
 
@@ -18,5 +30,10 @@
         }
       }
     </script>
+
+    <div class="some-class"></div>
+    <div>
+      <div class="some-class"></div>
+    </div>
   </body>
 </html>
